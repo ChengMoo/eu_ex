@@ -1,0 +1,38 @@
+name: main
+
+on: 
+  workflow_dispatch:  # Workflow中的运行按钮
+  release:
+    types: [published]
+  push:
+    tags:
+    - 'v*'
+  #  branches: 
+  #    - main
+  schedule:
+    - cron: '1 12 * * 5' # 早上十二点到晚上十点每小时一次
+  watch:
+    types: [started]
+   
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id  # 自己点的 star 来运行脚本
+    steps:
+    - name: Checkout
+      uses: actions/checkout@main
+    - name: Set up Python #安装python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Install requirements #安装轮子
+      run: |
+        pip install requests beautifulsoup4
+    - name: Run script
+      env:
+        USERNAME: ${{ secrets.USERNAME }}
+        PASSWORD: ${{ secrets.PASSWORD }}
+        # https://mailparser.io   
+        MAILPARSER_DOWNLOAD_URL_ID: ${{ secrets.MAILPARSER_DOWNLOAD_URL_ID }}
+      run: |
+        python3 main.py "$USERNAME" "$PASSWORD" "$MAILPARSER_DOWNLOAD_URL_ID"
