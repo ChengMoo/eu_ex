@@ -5,14 +5,14 @@ on:
   release:
     types: [published]
   push:
-    tags:
-    - 'v*'
-  #  branches: 
-  #    - main
+#     tags:
+#     - 'v*'
+   branches: 
+     - main
   schedule:
     - cron: '1 12 * * 5' # 早上十二点到晚上十点每小时一次
-  watch:
-    types: [started]
+#   watch:
+#     types: [started]
    
 jobs:
   build:
