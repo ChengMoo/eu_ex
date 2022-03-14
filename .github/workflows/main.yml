@@ -27,7 +27,7 @@ jobs:
         python-version: 3.8
     - name: Install requirements #安装轮子
       run: |
-        pip install requests beautifulsoup4
+        pip install requests beautifulsoup4 pyairtable
     - name: Run script
       env:
         USERNAME: ${{ secrets.USERNAME }}
