@@ -49,9 +49,9 @@ TRUECAPTCHA_APIKEY = os.environ.get("TRUECAPTCHA_APIKEY", "wMjXmBIcHcdYqO2RrsVN"
 CHECK_CAPTCHA_SOLVER_USAGE = True
 
 # options: ZapierAirtable or Mailparser
-LOGIN_PIN_SENDER = "ZapierAirtable"
+LOGIN_PIN_SENDER = "Mailparser"
 # options: ZapierAirtable or Mailparser
-RENEW_PIN_SENDER = "ZapierAirtable"
+RENEW_PIN_SENDER = "Mailparser"
 
 # For getting login PIN from airtable, zapier send email to airtable
 AIRTABLE_API_KEY = os.environ.get("AIRTABLE_API_KEY")
