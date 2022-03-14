@@ -1,6 +1,6 @@
 name: main
 
-on: 
+on:  
   workflow_dispatch:  # Workflow中的运行按钮
   release:
     types: [published]
