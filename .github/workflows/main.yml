@@ -36,6 +36,8 @@ jobs:
         TRUECAPTCHA_APIKEY: ${{ secrets.TRUECAPTCHA_APIKEY }}
         MAILPARSER_DL_IDS_FOR_LOGIN: ${{ secrets.MAILPARSER_DL_IDS_FOR_LOGIN }}
         MAILPARSER_DL_IDS_FOR_RENEW: ${{ secrets.MAILPARSER_DL_IDS_FOR_RENEW }}
+        LOGIN_PIN_SENDER: ${{ secrets.LOGIN_PIN_SENDER }}
+        RENEW_PIN_SENDER: ${{ secrets.RENEW_PIN_SENDER }}
         # https://mailparser.io   
         MAILPARSER_DOWNLOAD_URL_ID: ${{ secrets.MAILPARSER_DOWNLOAD_URL_ID }}
       run: |
