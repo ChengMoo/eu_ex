@@ -31,7 +31,7 @@ jobs:
     - name: Run script
       env:
         CUSTOMERIDS: ${{ secrets.CUSTOMERIDS }}
-        PASSWORDS: ${{ secrets.PASSWORD }}
+        PASSWORDS: ${{ secrets.PASSWORDS }}
         TRUECAPTCHA_USERID: ${{ secrets.TRUECAPTCHA_USERID }}
         TRUECAPTCHA_APIKEY: ${{ secrets.TRUECAPTCHA_APIKEY }}
         MAILPARSER_DL_IDS_FOR_LOGIN: ${{ secrets.MAILPARSER_DL_IDS_FOR_LOGIN }}
